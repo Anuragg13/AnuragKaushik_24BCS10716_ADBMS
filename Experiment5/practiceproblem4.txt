@@ -1,0 +1,7 @@
+SELECT 
+    ROUND(
+        (SUM(CASE WHEN cuisine = 'American' THEN price ELSE 0 END) 
+        / SUM(price)) * 100,
+        2
+    ) AS American_Revenue
+FROM Orders;
